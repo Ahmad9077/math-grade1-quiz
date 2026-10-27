@@ -1,0 +1,25 @@
+{
+  "id": "math-grade1",
+  "quizId": "math-grade1",
+  "title": "الرياضيات - الأول الابتدائي",
+  "description": "اختبار تدريبي للاختبار الأول في الرياضيات للصف الأول: الأعداد حتى ١٢، المقارنة، الساعة والتقويم.",
+  "recommendedAge": "5–7",
+  "basePath": "/math-grade1-quiz/",
+  "questionsPerRound": 8,
+  "testQuestions": 12,
+  "topics": [
+    "count",
+    "order",
+    "compare",
+    "clock",
+    "calendar"
+  ],
+  "capabilities": {
+    "audio": true,
+    "adaptive": true,
+    "progress": true,
+    "answerReview": true,
+    "challenge": false
+  },
+  "version": "1.0.0"
+}
