@@ -13,108 +13,6 @@
     "style": 0.2
   },
   "clips": {
-    "ar/d/fri": {
-      "text": "الجمعة.",
-      "hash": "aafb9ade62d1b8b2",
-      "durationMs": 1120,
-      "bytes": 9447
-    },
-    "ar/d/mon": {
-      "text": "الإثنين.",
-      "hash": "09191a357451da7a",
-      "durationMs": 1034,
-      "bytes": 8820
-    },
-    "ar/d/sat": {
-      "text": "السبت.",
-      "hash": "68d3f1e567f0b2dd",
-      "durationMs": 943,
-      "bytes": 8193
-    },
-    "ar/d/sun": {
-      "text": "الأحد.",
-      "hash": "aff29f0dc2ef0410",
-      "durationMs": 879,
-      "bytes": 7566
-    },
-    "ar/d/thu": {
-      "text": "الخميس.",
-      "hash": "619e282b003b25bc",
-      "durationMs": 1008,
-      "bytes": 8611
-    },
-    "ar/d/tue": {
-      "text": "الثلاثاء.",
-      "hash": "2e69eef10fef62d4",
-      "durationMs": 1133,
-      "bytes": 9656
-    },
-    "ar/d/wed": {
-      "text": "الأربعاء.",
-      "hash": "d1c920b0e5e0c5ca",
-      "durationMs": 1114,
-      "bytes": 9447
-    },
-    "ar/m/dhulhijja": {
-      "text": "ذو الحجة.",
-      "hash": "a3f65da2377ab023",
-      "durationMs": 1094,
-      "bytes": 9238
-    },
-    "ar/m/dhulqada": {
-      "text": "ذو القعدة.",
-      "hash": "d7e3cd15abf12a8d",
-      "durationMs": 1072,
-      "bytes": 9238
-    },
-    "ar/m/feb": {
-      "text": "فبراير.",
-      "hash": "81044440e876d58f",
-      "durationMs": 990,
-      "bytes": 8402
-    },
-    "ar/m/jan": {
-      "text": "يناير.",
-      "hash": "e92bbee493c62730",
-      "durationMs": 910,
-      "bytes": 7775
-    },
-    "ar/m/mar": {
-      "text": "مارس.",
-      "hash": "10b353375b1a3e39",
-      "durationMs": 854,
-      "bytes": 7357
-    },
-    "ar/m/muharram": {
-      "text": "محرم.",
-      "hash": "bf1c65f04cbe89ac",
-      "durationMs": 811,
-      "bytes": 7148
-    },
-    "ar/m/oct": {
-      "text": "أكتوبر.",
-      "hash": "d833862f2258e54f",
-      "durationMs": 982,
-      "bytes": 8402
-    },
-    "ar/m/rajab": {
-      "text": "رجب.",
-      "hash": "582f7fadb21545f1",
-      "durationMs": 774,
-      "bytes": 6730
-    },
-    "ar/m/ramadan": {
-      "text": "رمضان.",
-      "hash": "67a4e8ecde9f92d4",
-      "durationMs": 981,
-      "bytes": 8402
-    },
-    "ar/m/shawwal": {
-      "text": "شوال.",
-      "hash": "d2eebc23eba6fff4",
-      "durationMs": 972,
-      "bytes": 8402
-    },
     "ar/n/0": {
       "text": "صفر.",
       "hash": "2eda54022fda94e9",
@@ -132,18 +30,6 @@
       "hash": "314553a389d75319",
       "durationMs": 785,
       "bytes": 6939
-    },
-    "ar/n/11": {
-      "text": "أحد عشر.",
-      "hash": "51029ed918414f9e",
-      "durationMs": 1120,
-      "bytes": 9447
-    },
-    "ar/n/12": {
-      "text": "اثنا عشر.",
-      "hash": "3d143c574b16e86d",
-      "durationMs": 1120,
-      "bytes": 9447
     },
     "ar/n/2": {
       "text": "اثنان.",
@@ -193,257 +79,221 @@
       "durationMs": 731,
       "bytes": 6312
     },
-    "ar/q/after": {
-      "text": "شنو العدد اللي بعده؟",
-      "hash": "d6614f54c1641a13",
-      "durationMs": 1484,
-      "bytes": 12372
+    "ar/q/bond-1": {
+      "text": "العدد اللي تحت يتكون من جزئين. شنو الجزء الناقص؟",
+      "hash": "7f8633caef9d5923",
+      "durationMs": 4442,
+      "bytes": 36196
     },
-    "ar/q/before": {
-      "text": "شنو العدد اللي قبله؟",
-      "hash": "0760bd2581d788da",
-      "durationMs": 1566,
-      "bytes": 12999
+    "ar/q/bond-2": {
+      "text": "جزء وجزء يكونون العدد اللي تحت. أي عدد ناقص؟",
+      "hash": "af4be6cfe037ad14",
+      "durationMs": 5008,
+      "bytes": 40585
     },
-    "ar/q/biggest": {
-      "text": "وين العدد الأكبر؟",
-      "hash": "ac54cc552350bd5c",
-      "durationMs": 1535,
-      "bytes": 12790
+    "ar/q/complete-1": {
+      "text": "أي عدد ناقص في العبارة؟",
+      "hash": "815c87202e59c9aa",
+      "durationMs": 2438,
+      "bytes": 20105
     },
-    "ar/q/clock-find": {
-      "text": "أي ساعة تبين هالوقت؟",
-      "hash": "4a3f1ca293ba14aa",
-      "durationMs": 2008,
-      "bytes": 16552
+    "ar/q/complete-2": {
+      "text": "نكمل العبارة عشان تصير صح. شنو العدد الناقص؟",
+      "hash": "154a57d06539e556",
+      "durationMs": 4120,
+      "bytes": 33479
     },
-    "ar/q/clock-read": {
-      "text": "كم الساعة؟",
-      "hash": "bebe6153009754d3",
-      "durationMs": 1184,
-      "bytes": 10074
+    "ar/q/draw-1": {
+      "text": "كم نرسم في الجهة الفاضية؟",
+      "hash": "c61ccafdd833f3ed",
+      "durationMs": 1950,
+      "bytes": 16134
     },
-    "ar/q/compare": {
-      "text": "أي رمز نحط في الدائرة؟",
-      "hash": "cb442ae675dd277c",
-      "durationMs": 1870,
-      "bytes": 15507
+    "ar/q/draw-2": {
+      "text": "نكمل الرسم عشان يصير الكل نفس العدد. كم نرسم؟",
+      "hash": "72fb2315495598f0",
+      "durationMs": 4280,
+      "bytes": 34733
     },
-    "ar/q/complete": {
-      "text": "أي عدد يخلي الجملة صحيحة؟",
-      "hash": "b8ccb87f48921395",
-      "durationMs": 2371,
-      "bytes": 19478
+    "ar/q/house-1": {
+      "text": "نكمل بيت العدد. أي رقم ناقص؟",
+      "hash": "91c289607adbd279",
+      "durationMs": 3480,
+      "bytes": 28464
     },
-    "ar/q/count": {
-      "text": "كم العدد؟",
-      "hash": "749f196fadac1a81",
-      "durationMs": 1051,
-      "bytes": 9029
+    "ar/q/house-2": {
+      "text": "كل طابق في البيت مجموعه نفس العدد اللي فوق. شنو الناقص؟",
+      "hash": "45b25efe629d4f3d",
+      "durationMs": 4772,
+      "bytes": 38704
     },
-    "ar/q/day-after": {
-      "text": "شنو اليوم اللي بعده؟",
-      "hash": "aa4dd02323583297",
-      "durationMs": 1412,
-      "bytes": 11954
+    "ar/q/jump-1": {
+      "text": "نبدأ من النقطة الحمرا ونقفز لليمين. وين نوصل؟",
+      "hash": "6c477274f0ca70b8",
+      "durationMs": 4260,
+      "bytes": 34733
     },
-    "ar/q/day-before": {
-      "text": "شنو اليوم اللي قبله؟",
-      "hash": "643a0defdf9a5580",
-      "durationMs": 1650,
-      "bytes": 13835
+    "ar/q/jump-2": {
+      "text": "نعد القفزات على خط الأعداد. عند أي عدد نوقف؟",
+      "hash": "f9e5558b9d574371",
+      "durationMs": 4641,
+      "bytes": 37659
     },
-    "ar/q/fasting": {
-      "text": "في أي شهر نصوم؟",
-      "hash": "e2335879d591e2a8",
-      "durationMs": 1525,
-      "bytes": 12790
+    "ar/q/order": {
+      "text": "نقدر نجمع بأي ترتيب، والناتج نفسه. أي عدد ناقص؟",
+      "hash": "4031cfd72d42a5fa",
+      "durationMs": 5280,
+      "bytes": 42883
     },
-    "ar/q/first-gregorian": {
-      "text": "شنو أول شهر في السنة الميلادية؟",
-      "hash": "c7264de397adfebf",
-      "durationMs": 2517,
-      "bytes": 20732
+    "ar/q/paint": {
+      "text": "نعد الأصفر والأحمر. أي عبارة تناسبهم؟",
+      "hash": "558a0d8a738edd15",
+      "durationMs": 3593,
+      "bytes": 29300
     },
-    "ar/q/first-hijri": {
-      "text": "شنو أول شهر في السنة الهجرية؟",
-      "hash": "7e964bd556cd02d8",
+    "ar/q/picture-1": {
+      "text": "نطالع الصورة، ونكمل العبارة.",
+      "hash": "e7233ae1fe65e26f",
+      "durationMs": 2694,
+      "bytes": 22194
+    },
+    "ar/q/picture-2": {
+      "text": "الصورة تساعدنا. أي عدد ناقص؟",
+      "hash": "baadc1573e402bf9",
+      "durationMs": 3404,
+      "bytes": 27837
+    },
+    "ar/q/result-1": {
+      "text": "نجمع العددين. كم الناتج؟",
+      "hash": "6314572b34aabd1b",
       "durationMs": 2503,
       "bytes": 20523
     },
-    "ar/q/hajj": {
-      "text": "في أي شهر الحج؟",
-      "hash": "d598c3ba48eb8b8f",
-      "durationMs": 1545,
-      "bytes": 12999
-    },
-    "ar/q/hour-after": {
-      "text": "كم تصير الساعة بعد ساعة؟",
-      "hash": "310cb261a88c4842",
-      "durationMs": 2561,
-      "bytes": 21149
-    },
-    "ar/q/hour-before": {
-      "text": "كم كانت الساعة قبل ساعة؟",
-      "hash": "a9387cb2374ea82e",
-      "durationMs": 2385,
-      "bytes": 19687
-    },
-    "ar/q/match-count": {
-      "text": "نوصل كل مجموعة بعددها.",
-      "hash": "3c06dac9b17b81d7",
-      "durationMs": 2454,
-      "bytes": 20105
-    },
-    "ar/q/missing": {
-      "text": "شنو العدد الناقص؟",
-      "hash": "fb63f37cb9642e38",
-      "durationMs": 1624,
-      "bytes": 13626
-    },
-    "ar/q/months-gregorian": {
-      "text": "كم شهر في السنة الميلادية؟",
-      "hash": "2d1b18de0c21f637",
-      "durationMs": 2042,
-      "bytes": 16970
-    },
-    "ar/q/months-hijri": {
-      "text": "كم شهر في السنة الهجرية؟",
-      "hash": "4eddc2c8ceee16a7",
-      "durationMs": 2160,
-      "bytes": 17806
-    },
-    "ar/q/national-day": {
-      "text": "في أي شهر اليوم الوطني للكويت؟",
-      "hash": "214f48d0ab7f582b",
-      "durationMs": 2908,
-      "bytes": 23866
-    },
-    "ar/q/school-start": {
-      "text": "في أي يوم يبدأ الأسبوع الدراسي؟",
-      "hash": "da8c522b572ea77c",
-      "durationMs": 2808,
-      "bytes": 23030
-    },
-    "ar/q/smallest": {
-      "text": "وين العدد الأصغر؟",
-      "hash": "3d0355d5be82f006",
-      "durationMs": 1516,
-      "bytes": 12790
-    },
-    "ar/q/week-days": {
-      "text": "كم يوم في الأسبوع؟",
-      "hash": "1de61f487019a13a",
+    "ar/q/result-2": {
+      "text": "شنو ناتج الجمع؟",
+      "hash": "9cedcb919d0b11d9",
       "durationMs": 1600,
       "bytes": 13417
     },
-    "ar/q/weekend": {
-      "text": "أي يوم عطلة نهاية الأسبوع؟",
-      "hash": "790787903aa2953b",
-      "durationMs": 2262,
-      "bytes": 18642
+    "ar/q/sign": {
+      "text": "شلون نقرا هالرمز؟",
+      "hash": "b36c3aa1bd2027e2",
+      "durationMs": 1760,
+      "bytes": 14671
     },
-    "ar/q/which-group": {
-      "text": "أي مجموعة فيها هالعدد؟",
-      "hash": "f2c2de26dafe23de",
-      "durationMs": 2130,
-      "bytes": 17597
+    "ar/q/sum-name": {
+      "text": "وين ناتج الجمع في هالعبارة؟",
+      "hash": "74fac5ff1262fafc",
+      "durationMs": 2198,
+      "bytes": 18224
+    },
+    "ar/q/which": {
+      "text": "أي عبارة ناتجها هالعدد؟",
+      "hash": "dfe91d231d9af0e3",
+      "durationMs": 2290,
+      "bytes": 18851
+    },
+    "ar/q/write-1": {
+      "text": "أي عبارة جمع تناسب الصورة؟",
+      "hash": "d2ee0f51b7c5c835",
+      "durationMs": 2760,
+      "bytes": 22612
+    },
+    "ar/q/write-2": {
+      "text": "نعد المجموعتين، ونختار العبارة الصح.",
+      "hash": "7d4a909f8f2795ff",
+      "durationMs": 3322,
+      "bytes": 27210
     },
     "ar/ui/cheer-1": {
-      "text": "كفو!",
-      "hash": "691bf115203a21a3",
-      "durationMs": 853,
-      "bytes": 7357
-    },
-    "ar/ui/cheer-10": {
-      "text": "يا سلام! صح.",
-      "hash": "17f84e5b28b69139",
-      "durationMs": 1973,
-      "bytes": 16343
-    },
-    "ar/ui/cheer-2": {
-      "text": "ما شاء الله! صح.",
-      "hash": "1b1894ccde64e863",
-      "durationMs": 1970,
-      "bytes": 16343
-    },
-    "ar/ui/cheer-3": {
-      "text": "واو! جواب صح!",
-      "hash": "16f0fbe7ad477eed",
-      "durationMs": 1974,
-      "bytes": 16343
-    },
-    "ar/ui/cheer-4": {
-      "text": "برافو! جواب ممتاز.",
-      "hash": "437f5c27a4682f59",
-      "durationMs": 2319,
-      "bytes": 19060
-    },
-    "ar/ui/cheer-5": {
-      "text": "الله! جواب حلو.",
-      "hash": "a48a02c8b261ade5",
-      "durationMs": 2320,
-      "bytes": 19060
-    },
-    "ar/ui/cheer-6": {
-      "text": "تمام التمام!",
-      "hash": "77721d814b803515",
-      "durationMs": 1467,
+      "text": "ناتج مضبوط!",
+      "hash": "71511d4bafa84c50",
+      "durationMs": 1480,
       "bytes": 12372
     },
-    "ar/ui/cheer-7": {
-      "text": "عفية!",
-      "hash": "6d5a1f332f83e757",
-      "durationMs": 880,
-      "bytes": 7566
+    "ar/ui/cheer-10": {
+      "text": "الأرقام تحبنا!",
+      "hash": "5957e25319a42ea6",
+      "durationMs": 1683,
+      "bytes": 14044
     },
-    "ar/ui/cheer-8": {
-      "text": "صح! رائع.",
-      "hash": "262f0d5ca76615db",
-      "durationMs": 1615,
+    "ar/ui/cheer-11": {
+      "text": "جواب مرتب مثل الأرقام!",
+      "hash": "e2d931466b47d67f",
+      "durationMs": 2463,
+      "bytes": 20314
+    },
+    "ar/ui/cheer-12": {
+      "text": "شطارة بالجمع!",
+      "hash": "25e8a56762861401",
+      "durationMs": 1760,
+      "bytes": 14671
+    },
+    "ar/ui/cheer-2": {
+      "text": "جمعناها صح!",
+      "hash": "e189ed93a1eb8a32",
+      "durationMs": 1331,
+      "bytes": 11118
+    },
+    "ar/ui/cheer-3": {
+      "text": "عقل حاسبة!",
+      "hash": "be4082ce175644c6",
+      "durationMs": 1600,
       "bytes": 13417
     },
-    "ar/ui/cheer-9": {
-      "text": "زين! جواب صحيح.",
-      "hash": "3f6e49f04141b8b2",
-      "durationMs": 1975,
-      "bytes": 16343
+    "ar/ui/cheer-4": {
+      "text": "صح، والجمع صار سهل.",
+      "hash": "d2b19e287fe9ace3",
+      "durationMs": 2161,
+      "bytes": 17806
     },
-    "ar/ui/count-is": {
-      "text": "العدد",
-      "hash": "fed853deaa10a2d7",
-      "durationMs": 881,
-      "bytes": 7566
+    "ar/ui/cheer-5": {
+      "text": "رقم ولا أحلى!",
+      "hash": "6d3c4d0213ad9521",
+      "durationMs": 1848,
+      "bytes": 15298
+    },
+    "ar/ui/cheer-6": {
+      "text": "حسبة نظيفة!",
+      "hash": "29619ebc315f1765",
+      "durationMs": 1502,
+      "bytes": 12581
+    },
+    "ar/ui/cheer-7": {
+      "text": "هذي هي الرياضيات!",
+      "hash": "a32b48731d53785e",
+      "durationMs": 1707,
+      "bytes": 14253
+    },
+    "ar/ui/cheer-8": {
+      "text": "جواب يلمع!",
+      "hash": "9fd57cd42797a66f",
+      "durationMs": 1854,
+      "bytes": 15298
+    },
+    "ar/ui/cheer-9": {
+      "text": "تمام، ومن غير غلطة!",
+      "hash": "2a133ce680d2465d",
+      "durationMs": 2218,
+      "bytes": 18224
     },
     "ar/ui/done-good": {
-      "text": "حلو! نتدرب مرة ثانية… ونصير أقوى.",
-      "hash": "be2db2a4ee1406f1",
-      "durationMs": 3680,
-      "bytes": 29927
+      "text": "زين! كل ما نتدرب على الجمع، نصير أسرع.",
+      "hash": "11118eb2b61598d3",
+      "durationMs": 3801,
+      "bytes": 30972
     },
     "ar/ui/done-great": {
-      "text": "واو! نتيجة رائعة!",
-      "hash": "cfb4757f5a4bcbf0",
-      "durationMs": 2561,
-      "bytes": 21149
+      "text": "جولة حساب ولا أروع! الجمع صار لعبتنا.",
+      "hash": "1eab00b1e355b9b4",
+      "durationMs": 4164,
+      "bytes": 33897
     },
     "ar/ui/equal": {
       "text": "يساوي",
       "hash": "dff08febf51eaca0",
       "durationMs": 860,
       "bytes": 7357
-    },
-    "ar/ui/greater": {
-      "text": "أكبر من",
-      "hash": "a445f8df7c6d2828",
-      "durationMs": 1023,
-      "bytes": 8820
-    },
-    "ar/ui/hour": {
-      "text": "الساعة",
-      "hash": "01f2a534c173b223",
-      "durationMs": 937,
-      "bytes": 7984
     },
     "ar/ui/match-first": {
       "text": "نبدأ بالمجموعة أول.",
@@ -452,64 +302,70 @@
       "bytes": 14880
     },
     "ar/ui/match-wrong": {
-      "text": "لا… نجرب مرة ثانية.",
-      "hash": "3f7a6fadd8f0f515",
-      "durationMs": 2351,
+      "text": "مو هذي، نجرب وحدة ثانية.",
+      "hash": "3ea579475a5ba3cb",
+      "durationMs": 2334,
       "bytes": 19269
     },
+    "ar/ui/plus": {
+      "text": "زائد",
+      "hash": "62bbb2787812349d",
+      "durationMs": 833,
+      "bytes": 7148
+    },
     "ar/ui/retry-1": {
-      "text": "مو مشكلة… الجواب الصح…",
-      "hash": "d4023bc2a9fb4b51",
-      "durationMs": 2559,
-      "bytes": 20940
+      "text": "ما عليه، نعدها مع بعض.",
+      "hash": "744dd051cd64fd79",
+      "durationMs": 1889,
+      "bytes": 15716
     },
     "ar/ui/retry-2": {
-      "text": "قربنا! الجواب الصح…",
-      "hash": "dc437e4238565bf1",
-      "durationMs": 2304,
-      "bytes": 19060
+      "text": "قريبة! نشوف الحسبة.",
+      "hash": "e72fe9e092ef9d2a",
+      "durationMs": 2054,
+      "bytes": 16970
     },
     "ar/ui/retry-3": {
-      "text": "خلنا نتعلمها مع بعض… الجواب الصح…",
-      "hash": "74cf9656fe83d22c",
-      "durationMs": 3286,
-      "bytes": 26792
+      "text": "عادي، الجمع يبي له تمرين.",
+      "hash": "15374312ad8922ea",
+      "durationMs": 2438,
+      "bytes": 20105
     },
     "ar/ui/retry-4": {
-      "text": "محاولة حلوة! الجواب الصح…",
-      "hash": "63bdc19efb1ddd10",
-      "durationMs": 2802,
-      "bytes": 23030
+      "text": "نعيدها على مهل.",
+      "hash": "13252a9902353dd2",
+      "durationMs": 1680,
+      "bytes": 14044
     },
     "ar/ui/retry-5": {
-      "text": "نشوف مع بعض… الجواب الصح…",
-      "hash": "3a627ddb334b0d79",
-      "durationMs": 2656,
-      "bytes": 21776
+      "text": "خلنا نعدها سوا.",
+      "hash": "3eba586b081266a3",
+      "durationMs": 1351,
+      "bytes": 11327
+    },
+    "ar/ui/retry-6": {
+      "text": "الحين نعرف الطريقة.",
+      "hash": "dd06b940ca51eabd",
+      "durationMs": 1920,
+      "bytes": 15925
     },
     "ar/ui/review": {
-      "text": "خلنا نتذكر مع بعض…",
-      "hash": "761c595d8d556cdc",
-      "durationMs": 1766,
-      "bytes": 14671
-    },
-    "ar/ui/smaller": {
-      "text": "أصغر من",
-      "hash": "8877a91e861accea",
-      "durationMs": 1029,
-      "bytes": 8820
+      "text": "خلنا نشوفها مع بعض.",
+      "hash": "5f1638727085460a",
+      "durationMs": 1521,
+      "bytes": 12790
     },
     "ar/ui/test-intro": {
-      "text": "هذا اختبار تجريبي… فيه أسئلة من كل الدروس. يلا نبدأ!",
-      "hash": "dc1d19349831fa74",
-      "durationMs": 5065,
-      "bytes": 41003
+      "text": "هذا مثل الاختبار القصير بالضبط. جاهزين؟ يلا نبدأ!",
+      "hash": "5ca97ad428fe839f",
+      "durationMs": 4750,
+      "bytes": 38495
     },
     "ar/ui/welcome": {
-      "text": "هلا! نختار درس ونبدأ.",
-      "hash": "6f0e1e0d8271b73e",
-      "durationMs": 2550,
-      "bytes": 20940
+      "text": "هلا والله! اليوم نتدرب على الجمع. نختار درس ونبدأ.",
+      "hash": "4038e87a72697c25",
+      "durationMs": 5128,
+      "bytes": 41629
     }
   }
 }

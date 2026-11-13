@@ -8,7 +8,7 @@ test('preview never calls the Hub or Supabase', async ({ page }) => {
     if (url.includes('ahmad9077.github.io') || url.includes('supabase')) external.push(url)
   })
   await start(page)
-  await page.locator('.topic-card[data-topic="clock"]').click()
+  await page.locator('.topic-card[data-topic="sentence"]').click()
   await answer(page, true)
   expect(external).toEqual([])
 })

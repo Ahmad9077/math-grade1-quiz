@@ -9,7 +9,7 @@ const style = html.match(/<link rel="stylesheet"[^>]*href="\.\/(assets\/[^"]+\.c
 if (!script || !style) throw new Error('Could not find the built script and stylesheet in dist/index.html.')
 
 const page = `<title>الرياضيات</title>
-<meta name="description" content="نسخة تجريبية لاختبار الرياضيات الأول للصف الأول: الأعداد حتى ١٢، المقارنة، الساعة والتقويم.">
+<meta name="description" content="نسخة تجريبية لاختبار الرياضيات القصير الثاني للصف الأول: عبارة الجمع، تكوين العددين ٤ و ٥، وتكوين العدد ٩.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

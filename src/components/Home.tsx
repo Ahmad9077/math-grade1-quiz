@@ -60,6 +60,7 @@ export function Home({ progress, muted, onToggleSound, onOpenTopic, onStartTest 
                 <Art art={topic.art[0] ?? ''} className="art-back" />
                 <Art art={topic.art[1] ?? ''} className="art-front" />
               </span>
+              <span className="topic-card-lesson">درس {topic.lesson}</span>
               <span className="topic-card-title">{topic.title}</span>
               <span className="topic-card-foot">
                 <Stars count={progress.stars[topic.id] ?? 0} size="sm" />

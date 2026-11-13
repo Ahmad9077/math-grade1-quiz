@@ -1,8 +1,8 @@
 import { QUESTIONS, dressQuestion, type Option, type Question, type TopicId } from '../data/catalog'
 
 export const PRACTICE_SIZE = 8
-/** The mock test, weighted like the official model papers: counting and the clock carry the most marks. */
-export const TEST_PLAN: Record<TopicId, number> = { count: 3, order: 2, compare: 2, clock: 3, calendar: 2 }
+/** The mock test: the short test's three lessons, making 9 a little more as the newest. */
+export const TEST_PLAN: Record<TopicId, number> = { sentence: 3, make45: 3, make9: 4 }
 export const TEST_SIZE = Object.values(TEST_PLAN).reduce((sum, count) => sum + count, 0)
 
 export type Random = () => number
@@ -71,7 +71,7 @@ function mixKinds(questions: Question[], random: Random): Question[] {
   return result
 }
 
-/** Choices are shuffled every time; the comparison signs keep the book's order. */
+/** Choices are shuffled every time, unless a question keeps its order. */
 export function arrangeOptions(question: Question, random: Random = Math.random): Option[] {
   return question.kind === 'pick' && !question.fixedOrder ? shuffle(question.options, random) : [...question.options]
 }

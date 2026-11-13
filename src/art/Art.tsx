@@ -83,6 +83,71 @@ export function Art({ art, className = '' }: ArtProps) {
         </span>
       )
     }
+    case 'sent': {
+      const [a = '?', b = '?', c = '?'] = rest
+      return <Sentence parts={[a, '+', b, '=', c]} className={className} />
+    }
+    case 'sum':
+      return <Sentence parts={[rest[0] ?? '?', '+', rest[1] ?? '?']} className={className} />
+    case 'eq': {
+      const [a = '?', b = '?', c = '?', e = '?'] = rest
+      return <Sentence parts={[a, '+', b, '=', c, '+', e]} className={className} />
+    }
+    case 'pair': {
+      const [object = '🍎', a = '0', b = '0'] = rest
+      return <PairFrame object={object} a={Number(a)} b={Number(b)} className={className} />
+    }
+    case 'picsent': {
+      const [object = '🍎', a = '0', b = '0', blank = 'b'] = rest
+      return (
+        <span className={classes('art-stack')} aria-hidden="true">
+          <PairFrame object={object} a={Number(a)} b={Number(b)} />
+          <Sentence parts={[a, '+', blank === 'b' ? '?' : b, '=', blank === 'c' ? '?' : String(Number(a) + Number(b))]} />
+        </span>
+      )
+    }
+    case 'cubes2':
+      return <CubeRod a={Number(rest[0])} b={Number(rest[1])} className={className} />
+    case 'frame2':
+      return <TwoColourFrame a={Number(rest[0])} b={Number(rest[1])} className={className} />
+    case 'dotsent': {
+      const [a = '0', b = '0'] = rest
+      return (
+        <span className={classes('art-stack')} aria-hidden="true">
+          <Domino a={Number(a)} b={Number(b)} />
+          <Sentence parts={[a, '+', b, '=', '?']} />
+        </span>
+      )
+    }
+    case 'domsent': {
+      const [given = '0', total = '0'] = rest
+      return (
+        <span className={classes('art-stack')} aria-hidden="true">
+          <Domino a={Number(given)} b={null} />
+          <Sentence parts={[given, '+', '?', '=', total]} />
+        </span>
+      )
+    }
+    case 'jump': {
+      // As in the book: the sentence above the line; the jumps are drawn once the child has answered.
+      const [start = '0', step = '0'] = rest
+      return (
+        <span className={classes('art-stack')} aria-hidden="true">
+          <Sentence parts={[start, '+', step, '=', '?']} />
+          <JumpLine start={Number(start)} step={Number(step)} />
+        </span>
+      )
+    }
+    case 'house': {
+      const [total = '0', floors = ''] = rest
+      return <NumberHouse total={total} floors={floors.split(',').map((floor) => floor.split('+') as [string, string])} className={className} />
+    }
+    case 'bond': {
+      const [whole = '0', a = '?', b = '?'] = rest
+      return <Bond whole={whole} a={a} b={b} className={className} />
+    }
+    case 'paint':
+      return <PaintRow yellow={Number(rest[0])} red={Number(rest[1])} className={className} />
     default:
       return (
         <span className={classes('art-emoji')} aria-hidden="true">
@@ -97,7 +162,7 @@ function NumberBox({ value }: { value: string }) {
 }
 
 /** A group laid out in neat rows, as in the book: up to five in a row, two or three rows. */
-function Group({ object, count, className = '' }: { object: string; count: number; className?: string }) {
+function Group({ object, count, className = '', compact = false }: { object: string; count: number; className?: string; compact?: boolean }) {
   if (count === 0) {
     return (
       <span className={`art art-group is-empty ${className}`} aria-hidden="true">
@@ -105,7 +170,8 @@ function Group({ object, count, className = '' }: { object: string; count: numbe
       </span>
     )
   }
-  const columns = count <= 5 ? count : count <= 10 ? Math.ceil(count / 2) : Math.ceil(count / 3)
+  // In a two-part frame a group stands in two rows from four on, so both groups fit a phone.
+  const columns = compact ? (count <= 3 ? count : Math.ceil(count / 2)) : count <= 5 ? count : count <= 10 ? Math.ceil(count / 2) : Math.ceil(count / 3)
   return (
     <span className={`art art-group ${className}`} aria-hidden="true" style={{ '--columns': columns } as React.CSSProperties}>
       {Array.from({ length: count }, (_, n) => (
@@ -266,6 +332,176 @@ function NumberLine({ items, className = '' }: { items: string[]; className?: st
           <span className="line-tick" />
           <span className={`line-number ${item === '?' ? 'is-missing' : ''}`}>{item === '?' ? '؟' : A(Number(item))}</span>
         </span>
+      ))}
+    </span>
+  )
+}
+
+// ── Addition (unit 3) ────────────────────────────────────────────────────
+// Read from the right, as in the book: the first number of a sentence or a picture is on the right.
+
+function Cell({ value, className = '' }: { value: string; className?: string }) {
+  return value === '?' ? <span className={`sent-num is-missing ${className}`}>؟</span> : <span className={`sent-num ${className}`}>{A(Number(value))}</span>
+}
+
+/** «٢ + ٦ = ٨», each number in its box; `?` is the empty box to fill. */
+function Sentence({ parts, className = '' }: { parts: string[]; className?: string }) {
+  return (
+    <span className={`art art-sentence ${className}`} aria-hidden="true" dir="rtl">
+      {parts.map((part, n) =>
+        part === '+' || part === '=' ? (
+          <span key={n} className="sent-op">
+            {part}
+          </span>
+        ) : (
+          <Cell key={n} value={part} />
+        ),
+      )}
+    </span>
+  )
+}
+
+/** Two groups of the same thing in a two-part frame: the first on the right. */
+function PairFrame({ object, a, b, className = '' }: { object: string; a: number; b: number; className?: string }) {
+  return (
+    <span className={`art art-pair ${className}`} aria-hidden="true" dir="rtl">
+      <span className="pair-side">
+        <Group object={object} count={a} compact />
+      </span>
+      <span className="pair-side">
+        <Group object={object} count={b} compact />
+      </span>
+    </span>
+  )
+}
+
+/** A rod of connecting cubes: a red cubes from the right, then b blue. */
+function CubeRod({ a, b, className = '' }: { a: number; b: number; className?: string }) {
+  const total = a + b
+  const size = 30
+  const width = total * size + 8
+  return (
+    <svg className={`art art-cuberod ${className}`} viewBox={`0 0 ${width} 46`} aria-hidden="true">
+      {Array.from({ length: total }, (_, n) => {
+        const x = width - 4 - (n + 1) * size
+        const tone = n < a ? 'is-red' : 'is-blue'
+        return (
+          <g key={n} className={`rod-cube ${tone}`}>
+            <rect x={x} y="10" width={size} height={size} rx="3" />
+            <rect x={x + size / 2 - 6} y="4" width="12" height="7" rx="2" className="rod-knob" />
+            <circle cx={x + size / 2} cy="25" r="5" className="rod-hole" />
+          </g>
+        )
+      })}
+    </svg>
+  )
+}
+
+/** A ten-frame filled from the right, top row first: a red counters, then b yellow. */
+function TwoColourFrame({ a, b, className = '' }: { a: number; b: number; className?: string }) {
+  return (
+    <svg className={`art art-frame2 ${className}`} viewBox="0 0 104 44" aria-hidden="true">
+      {Array.from({ length: 10 }, (_, cell) => {
+        const x = 2 + (4 - (cell % 5)) * 20
+        const y = 2 + Math.floor(cell / 5) * 20
+        return (
+          <g key={cell}>
+            <rect x={x} y={y} width="20" height="20" className="frame-cell" />
+            {cell < a + b ? <ellipse cx={x + 10} cy={y + 10} rx="7.5" ry="5" className={cell < a ? 'counter-red' : 'counter-yellow'} /> : null}
+          </g>
+        )
+      })}
+    </svg>
+  )
+}
+
+/** A two-part frame of counters: a red on the right, b blue on the left; `null` is the side still to draw. */
+function Domino({ a, b }: { a: number; b: number | null }) {
+  const dots = (count: number, tone: string) => (
+    <span className="dom-dots" style={{ '--dom-columns': count > 4 ? 3 : 2 } as React.CSSProperties}>
+      {Array.from({ length: count }, (_, n) => (
+        <span key={n} className={`dom-dot ${tone}`} />
+      ))}
+    </span>
+  )
+  return (
+    <span className="art art-domino" dir="rtl">
+      <span className="dom-side">{dots(a, 'is-red')}</span>
+      {b === null ? <span className="dom-side is-empty">؟</span> : <span className="dom-side">{dots(b, 'is-blue')}</span>}
+    </span>
+  )
+}
+
+/** The number line from 0 to 12, read from the left as in lesson 3-2: start at the red point, jump right. */
+function JumpLine({ start, step, className = '' }: { start: number; step: number; className?: string }) {
+  const x = (value: number) => 18 + value * 27
+  return (
+    <svg className={`art art-jump ${className}`} viewBox="0 0 360 96" aria-hidden="true">
+      <defs>
+        <marker id="jump-head" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+          <path d="M0 0 10 5 0 10z" className="jump-head" />
+        </marker>
+      </defs>
+      <line x1="6" y1="62" x2="354" y2="62" className="jump-rule" markerStart="url(#jump-head)" markerEnd="url(#jump-head)" />
+      {Array.from({ length: 13 }, (_, value) => (
+        <g key={value}>
+          <circle cx={x(value)} cy="62" r={value === start ? 6.5 : 3.6} className={value === start ? 'jump-start' : 'jump-tick'} />
+          <text x={x(value)} y="88" textAnchor="middle" className={`jump-number ${value === start ? 'is-start' : ''}`}>
+            {A(value)}
+          </text>
+        </g>
+      ))}
+      {Array.from({ length: step }, (_, n) => {
+        const from = x(start + n)
+        const to = x(start + n + 1)
+        return <path key={n} d={`M${from + 3} 54 Q${(from + to) / 2} 22 ${to - 3} 53`} className="jump-arc" markerEnd="url(#jump-head)" style={{ animationDelay: `${0.25 + n * 0.35}s` }} />
+      })}
+    </svg>
+  )
+}
+
+/** The book's number house: the number on the roof, one floor for each way to make it. */
+function NumberHouse({ total, floors, className = '' }: { total: string; floors: [string, string][]; className?: string }) {
+  return (
+    <span className={`art art-house ${className}`} aria-hidden="true">
+      <span className="house-roof">
+        <span className="house-total">{A(Number(total))}</span>
+      </span>
+      <span className="house-body">
+        {floors.map(([a, b], n) => (
+          <span key={n} className="house-floor" dir="rtl">
+            <Cell value={a} />
+            <span className="sent-op">+</span>
+            <Cell value={b} />
+          </span>
+        ))}
+      </span>
+    </span>
+  )
+}
+
+/** Part-part-whole: two part boxes above, joined to the whole below (the first part on the right). */
+function Bond({ whole, a, b, className = '' }: { whole: string; a: string; b: string; className?: string }) {
+  return (
+    <span className={`art art-bond ${className}`} aria-hidden="true">
+      <span className="bond-parts" dir="rtl">
+        <Cell value={a} />
+        <Cell value={b} />
+      </span>
+      <svg className="bond-links" viewBox="0 0 100 30" preserveAspectRatio="none">
+        <path d="M24 0 50 30 M76 0 50 30" />
+      </svg>
+      <Cell value={whole} className="bond-whole" />
+    </span>
+  )
+}
+
+/** Circles in a row, coloured from the right: yellow first, then red. */
+function PaintRow({ yellow, red, className = '' }: { yellow: number; red: number; className?: string }) {
+  return (
+    <span className={`art art-paint ${className}`} aria-hidden="true" dir="rtl">
+      {Array.from({ length: yellow + red }, (_, n) => (
+        <span key={n} className={`paint-dot ${n < yellow ? 'is-yellow' : 'is-red'}`} style={{ animationDelay: `${n * 70}ms` }} />
       ))}
     </span>
   )

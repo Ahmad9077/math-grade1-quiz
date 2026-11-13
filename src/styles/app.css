@@ -3374,3 +3374,369 @@ p {
 .match-item.option-count .art-group {
   font-size: clamp(0.22em, calc(1em / var(--columns, 5)), 0.42em);
 }
+
+/* ── Addition (unit 3): sentences, pictures, frames, the number line, houses and bonds ── */
+.art-sentence,
+.art-pair,
+.art-stack,
+.art-domino,
+.art-house,
+.art-bond,
+.art-paint,
+.art-cuberod,
+.art-frame2,
+.art-jump {
+  width: auto;
+  height: auto;
+}
+
+.art-sentence {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 44px;
+}
+
+.sent-num {
+  display: inline-grid;
+  place-items: center;
+  min-width: 1.35em;
+  padding: 0.06em 0.16em 0;
+  border: 3px solid var(--ink);
+  border-radius: 14px;
+  background: #fff;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.15;
+}
+
+.sent-num.is-missing {
+  border-style: dashed;
+  border-color: var(--tone);
+  background: var(--tint);
+  color: var(--deep);
+  animation: missing-glow 1.8s ease-in-out infinite;
+}
+
+.sent-op {
+  font-family: ui-rounded, 'SF Pro Rounded', system-ui, sans-serif;
+  font-weight: 900;
+  color: var(--deep);
+  line-height: 1;
+}
+
+@keyframes missing-glow {
+  50% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--tone) 22%, transparent); }
+}
+
+.art-stack {
+  display: inline-grid;
+  justify-items: center;
+  gap: 14px;
+}
+
+.art-pair {
+  display: inline-flex;
+  align-items: stretch;
+  border: 3px solid var(--ink);
+  border-radius: 18px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.pair-side {
+  display: grid;
+  place-items: center;
+  min-width: 112px;
+  min-height: 100px;
+  padding: 10px 12px;
+  font-size: 100px;
+}
+
+.pair-side + .pair-side {
+  border-inline-start: 3px solid var(--ink);
+}
+
+.pair-side .art-group {
+  font-size: 0.34em;
+}
+
+.art-cuberod {
+  display: block;
+  width: min(80vw, 330px);
+}
+
+.rod-cube rect:first-child { stroke: rgba(0, 0, 0, 0.25); stroke-width: 1.5; }
+.rod-cube.is-red rect { fill: #e53935; }
+.rod-cube.is-blue rect { fill: #3f7fe0; }
+.rod-knob { stroke: none; }
+.rod-cube.is-red .rod-knob { fill: #c62828; }
+.rod-cube.is-blue .rod-knob { fill: #2c5fb0; }
+.rod-hole { fill: rgba(0, 0, 0, 0.18); }
+
+.art-frame2 {
+  display: block;
+  width: min(66vw, 280px);
+}
+
+.counter-red { fill: #e53935; }
+.counter-yellow { fill: #ffcf33; stroke: #c99a00; stroke-width: 0.8; }
+
+.art-domino {
+  display: inline-flex;
+  border: 3px solid var(--ink);
+  border-radius: 18px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.dom-side {
+  display: grid;
+  place-items: center;
+  min-width: 108px;
+  min-height: 92px;
+  padding: 10px;
+}
+
+.dom-side + .dom-side {
+  border-inline-start: 3px solid var(--ink);
+}
+
+.dom-side.is-empty {
+  background: var(--tint);
+  color: var(--deep);
+  font-family: var(--font-display);
+  font-size: 40px;
+}
+
+.dom-dots {
+  display: grid;
+  grid-template-columns: repeat(var(--dom-columns, 2), auto);
+  gap: 6px;
+}
+
+.dom-dot {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  animation: dot-in 0.5s cubic-bezier(.34, 1.45, .64, 1) backwards;
+}
+
+.dom-dot.is-red { background: #e53935; }
+.dom-dot.is-blue { background: #3f7fe0; }
+.dom-dot:nth-child(2) { animation-delay: 0.06s; }
+.dom-dot:nth-child(3) { animation-delay: 0.12s; }
+.dom-dot:nth-child(4) { animation-delay: 0.18s; }
+.dom-dot:nth-child(n + 5) { animation-delay: 0.24s; }
+
+@keyframes dot-in {
+  from { transform: scale(0); }
+}
+
+.art-jump {
+  display: block;
+  /* The screen less the page gutters and the picture card's padding. */
+  width: min(calc(100vw - 84px), 520px);
+}
+
+.jump-rule { stroke: var(--ink); stroke-width: 2.5; }
+.jump-head { fill: var(--ink); }
+.jump-tick { fill: var(--ink); }
+.jump-start { fill: #e53935; }
+.jump-number { font: 700 15px var(--font-display); fill: var(--ink); }
+.jump-number.is-start { fill: #e53935; }
+.jump-arc {
+  fill: none;
+  stroke: #e53935;
+  stroke-width: 2.5;
+  stroke-dasharray: 4 3;
+  /* Hidden while the child counts along the line; drawn one by one with the feedback. */
+  visibility: hidden;
+}
+
+.has-feedback .subject .jump-arc,
+.review-art .jump-arc {
+  visibility: visible;
+  animation: arc-in 0.4s ease-out backwards;
+}
+
+@keyframes arc-in {
+  from { opacity: 0; }
+}
+
+.art-house {
+  display: inline-grid;
+  justify-items: center;
+  font-size: 30px;
+}
+
+.house-roof {
+  display: grid;
+  place-items: center;
+  width: 210px;
+  height: 78px;
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  background: #8f3b4c;
+}
+
+.house-total {
+  margin-top: 26px;
+  padding: 0 0.3em;
+  border-radius: 8px;
+  background: #e9c9a4;
+  color: var(--ink);
+  font-family: var(--font-display);
+  line-height: 1.2;
+}
+
+.house-body {
+  display: grid;
+  gap: 6px;
+  width: 168px;
+  padding: 10px;
+  border: 3px solid #8f3b4c;
+  border-top: 0;
+  background: #d9c3ce;
+}
+
+.house-floor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.art-bond {
+  display: inline-grid;
+  justify-items: center;
+  font-size: 44px;
+}
+
+.bond-parts {
+  display: flex;
+  gap: 54px;
+}
+
+.bond-links {
+  width: 150px;
+  height: 34px;
+  overflow: visible;
+}
+
+.bond-links path {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 3;
+  vector-effect: non-scaling-stroke;
+}
+
+.art-paint {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  max-width: min(86vw, 420px);
+  padding: 10px;
+  border: 3px solid var(--ink);
+  border-radius: 16px;
+  background: #fff;
+}
+
+.paint-dot {
+  width: 34px;
+  height: 34px;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  animation: dot-in 0.5s cubic-bezier(.34, 1.45, .64, 1) backwards;
+}
+
+.paint-dot.is-yellow { background: #ffd84a; }
+.paint-dot.is-red { background: #e53935; }
+
+/* Sentences and sums as answers: one wide row each, so the numbers stay big. */
+.options.holds-option-sent .option-slot,
+.options.holds-option-sum .option-slot {
+  flex-basis: 100%;
+  max-width: 100%;
+}
+
+.option-sent .option-art,
+.option-sum .option-art {
+  font-size: 34px;
+}
+
+.option-sent .art-sentence,
+.option-sum .art-sentence {
+  font-size: 34px;
+}
+
+.option-txt .option-art,
+.option-txt .art-text {
+  font-size: 30px;
+}
+
+.subject-sym .subject-art {
+  font-size: 120px;
+}
+
+@media (max-width: 480px) {
+  .art-sentence { font-size: 36px; gap: 6px; }
+  .option-sent .art-sentence,
+  .option-sum .art-sentence { font-size: 28px; }
+  .pair-side { min-width: 96px; min-height: 84px; font-size: 84px; }
+  .dom-side { min-width: 92px; min-height: 80px; }
+  .dom-dot { width: 18px; height: 18px; }
+  .house-roof { width: 180px; height: 66px; }
+  .house-body { width: 146px; }
+  .art-house { font-size: 26px; }
+  .art-bond { font-size: 36px; }
+  .paint-dot { width: 28px; height: 28px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sent-num.is-missing, .dom-dot, .paint-dot, .jump-arc { animation: none; }
+}
+
+/* Three lessons (short test 2): the book's lesson number on each card; one row of three on tablets. */
+.topic-card-lesson {
+  padding: 1px 10px;
+  border-radius: 999px;
+  background: var(--deep);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 800;
+  line-height: 1.6;
+}
+
+@media (min-width: 640px) {
+  .topic-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .topic-grid > .topic-card:last-child:nth-child(odd) {
+    grid-column: auto;
+    width: auto;
+    justify-self: stretch;
+  }
+}
+
+/* A sentence answer is one line: a shorter card, so the picture and all three answers fit a phone screen. */
+.options.holds-option-sent .option,
+.options.holds-option-sum .option {
+  min-height: 0;
+  padding-block: 16px;
+}
+
+/* «لون لتكون العدد ٩»: the nine circles stay in one row, as in the book, on every screen. */
+.art-paint {
+  flex-wrap: nowrap;
+  max-width: none;
+}
+
+.art-paint .paint-dot {
+  box-sizing: border-box;
+  width: min(34px, calc((100vw - 150px) / 9));
+  height: min(34px, calc((100vw - 150px) / 9));
+}
